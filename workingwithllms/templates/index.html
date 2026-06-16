@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <title>Python Tutor Chatbot</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <h2>Chat with the Python Tutor</h2>
+
+    <form method="POST">
+
+      <input
+        type="text"
+        name="user_input"
+        placeholder="Ask me something..."
+        required
+      >
+
+      <button type="submit">Send</button>
+
+    </form>
+
+    {% if reply %}
+
+    <div class="response-box">
+
+      <p><b>Assistant:</b> {{ reply }}</p>
+
+      <div class="usage">
+        Token usage — {{ usage }}
+      </div>
+
+    </div>
+
+    {% endif %}
+
+  </div>
+
+</body>
+</html>
